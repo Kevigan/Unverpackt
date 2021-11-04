@@ -4,65 +4,63 @@ using UnityEngine;
 
 public class ProduktPlaceHolder : MonoBehaviour
 {
-    [SerializeField] private Produkt[] products;
-    private List<string> names;
-    HashSet<string> produktTypes = new HashSet<string>();
+    [SerializeField] private List<Produkt> products = new List<Produkt>();
+    private List<Produkt> _products = new List<Produkt>();
 
-    private string actualProduct;
+    private Produkt actualProduct;
     private int number;
 
     void Start()
     {
-        names = new List<string>();
-        for (int i = 0; i < products.Length; i++)
+        GameManager.Main.gameStateGame2 = GameStateGame2.playing;
+        UIManager.SetNextProduct += PickRandmProduct;
+        UIManager.SetNextProduct += SetButtonNames;
+
+        _products = products;
+
+        PickRandmProduct();
+
+        SetButtonNames();
+
+    }
+
+    private void PickRandmProduct()
+    {
+        if (products.Count >= 1)
         {
-            names.Add(products[i].ProduktType.ToString());
+            UIManager.Main.SetBlurry(true);
+            int i = Random.Range(0, products.Count);
+            actualProduct = products[i];
+            Debug.Log(actualProduct);
+            GetComponent<SpriteRenderer>().sprite = products[i].Sprite;
+            GameManager.Main.actualProductName = actualProduct.ProduktType.ToString();
+            _products.Remove(actualProduct);
         }
-        foreach (string name in names)
+        else
         {
-            produktTypes.Add(name);
+            UIManager.Main.ChangeUIStateGame2(UIStateGame2.NoProductLeftPanel);
         }
-        SetSprite();
-
-        
     }
 
-
-    // Update is called once per frame
-    void Update()
+    private void SetButtonNames()
     {
+        List<string> tempList = new List<string>();
+        tempList.Add(actualProduct.answer1);
+        tempList.Add(actualProduct.answer2);
+        tempList.Add(actualProduct.answer3);
 
-    }
+        int i = Random.Range(0, tempList.Count);
+        UIManager.Main.nameButton1.text = tempList[i];
+        tempList.RemoveAt(i);
 
-    private void SetUiButtonsName()
-    {
-        number = Random.Range(0, 4);
-    }
+        int j = Random.Range(0, tempList.Count);
+        UIManager.Main.nameButton2.text = tempList[j];
+        tempList.RemoveAt(j);
 
-    public void SetSprite()
-    {
-        int i = Random.Range(0, products.Length);
-        GetComponent<SpriteRenderer>().sprite = products[i].Sprite;
-        actualProduct = products[i].ProduktType.ToString();
-        produktTypes.Remove(products[i].ProduktType.ToString());
-    }
+        UIManager.Main.nameButton3.text = tempList[0];
 
-    public void Button1(int i)
-    {
-        CheckAnswer(i);
+        //UIManager.Main.nameButton1.text = actualProduct.answer1;
+        //UIManager.Main.nameButton2.text = actualProduct.answer2;
+        //UIManager.Main.nameButton3.text = actualProduct.answer3;
     }
-    public void Button2(int i)
-    {
-        CheckAnswer(i);
-    }
-    public void Button3(int i)
-    {
-        CheckAnswer(i);
-    }
-
-    private void CheckAnswer(int i)
-    {
-
-    }
-
 }

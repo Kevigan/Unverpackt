@@ -27,6 +27,28 @@ public class GameManager : MonoBehaviour
     private int melons = 0;
     private int pineapple = 0;
 
+    [Header("GameTwo")]
+    public string actualProductName;
+    private int life = 5;
+    public int Life { get => life; set { life = value; } }
+    private int _score;
+    public int Score
+    {
+        get => _score;
+        set
+        {
+            _score = value;
+            UIManager.Main.UpdateScoreGame2();
+            if(life <= 0)
+            {
+                StartCoroutine(TimerOne());
+                
+            }
+        }
+    }
+    public int SavedScoreGame2;
+
+    public GameStateGame2 gameStateGame2;
     private void Awake()
     {
         if (Main == null)
@@ -43,18 +65,21 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        UIManager.Main.UpdateScoreGame2();
+
         if (SceneManager.GetSceneByName("StartMenu").isLoaded)
         {
             ChangeGameState(GameState.StartMenu);
         }
         else gameState = GameState.playing;
         SavedHighScore = PlayerPrefs.GetInt("HighScore");
+        SavedScoreGame2 = PlayerPrefs.GetInt("HighScoreGame2");
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void ChangeGameState(GameState newGameState)
@@ -87,6 +112,7 @@ public class GameManager : MonoBehaviour
         actualScene = 0;
         ChangeGameState(GameState.StartMenu);
         UIManager.Main.highScoreTextMenu.text = PlayerPrefs.GetInt("HighScore").ToString();
+        UIManager.Main.highScoreGame2.text = PlayerPrefs.GetInt("HighScoreGame2").ToString();
     }
     public void LoadScene(int i)
     {
@@ -165,6 +191,31 @@ public class GameManager : MonoBehaviour
             PlayerPrefs.SetInt("HighScore", GameManager.Main.HighScore);
         }
     }
+    public void SaveHighScoreGame2()
+    {
+        if (Score > SavedScoreGame2)
+        {
+            SavedScoreGame2 = Score;
+            PlayerPrefs.SetInt("HighScoreGame2", GameManager.Main.Score);
+        }
+    }
+
+    public void ChangeGameStateGame2(GameStateGame2 newState)
+    {
+        switch (newState)
+        {
+            case GameStateGame2.playing:
+                break;
+            case GameStateGame2.gameOver:
+                break;
+        }
+    }
+    IEnumerator TimerOne()
+    {
+        yield return new WaitForSeconds(2);
+        gameStateGame2 = GameStateGame2.gameOver;
+        UIManager.Main.ChangeUIStateGame2(UIStateGame2.NoProductLeftPanel);
+    }
 }
 
 public enum GameState
@@ -174,4 +225,10 @@ public enum GameState
     StartMenu,
     Death,
     LevelFinished
+}
+
+public enum GameStateGame2
+{
+    playing, 
+    gameOver
 }

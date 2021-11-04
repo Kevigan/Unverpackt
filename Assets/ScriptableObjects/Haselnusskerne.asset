@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 664eaae4395109448aed246b1f328643, type: 3}
+  m_Name: Haselnusskerne
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 21300000, guid: afbd519090544f647b05aa4375cfc034, type: 3}
+  produktType: 13
+  answer1: Muskatnuss
+  answer2: Mandeln
+  answer3: Haselnusskerne
