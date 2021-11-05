@@ -141,6 +141,7 @@ public class UIManager : MonoBehaviour
 
     public void QuitLevel()
     {
+        SoundManager.Main.StopBackgroundMusic();
         GameManager.Main.SaveHighScore();
         GameManager.Main.LoadMenuScene();
     }
@@ -198,6 +199,7 @@ public class UIManager : MonoBehaviour
     }
     public void ReturnToMenu()
     {
+        SoundManager.Main.StopBackgroundMusic();
         GameManager.Main.SaveHighScoreGame2();
         GameManager.Main.LoadMenuScene();
     }
@@ -205,6 +207,7 @@ public class UIManager : MonoBehaviour
     public void ActivateCorrectAnswerPanel()
     {
         ChangeUIStateGame2(UIStateGame2.CorrectAnswerPanel);
+        SoundManager.Main.ChooseSound(SoundType.cheer);
         SetBlurry(false);
         GameManager.Main.Score += 100;
         StartCoroutine(NextProduct());
@@ -214,6 +217,7 @@ public class UIManager : MonoBehaviour
     {
         GameManager.Main.Life--;
         ChangeUIStateGame2(UIStateGame2.WrongAnswerPanel);
+        SoundManager.Main.ChooseSound(SoundType.oohh);
         SetBlurry(false);
         GameManager.Main.Score -= 50;
         StartCoroutine(NextProduct());
@@ -239,7 +243,6 @@ public class UIManager : MonoBehaviour
     {
         if (GameManager.Main.actualProductName == nameButton1.text)
         {
-            Debug.Log("Correct!");
             ActivateCorrectAnswerPanel();
         }
         else
@@ -251,7 +254,7 @@ public class UIManager : MonoBehaviour
     {
         if (GameManager.Main.actualProductName == nameButton2.text)
         {
-            Debug.Log("Correct!");
+
             ActivateCorrectAnswerPanel();
         }
         else
@@ -264,7 +267,6 @@ public class UIManager : MonoBehaviour
     {
         if (GameManager.Main.actualProductName == nameButton3.text)
         {
-            Debug.Log("Correct!");
             ActivateCorrectAnswerPanel();
         }
         else

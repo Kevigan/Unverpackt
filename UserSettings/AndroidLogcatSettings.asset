@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "c1822173191dea68",
         "name": "com.DefaultCompany.UnverpacktdurchBerlin",
-        "processId": 27975,
+        "processId": 16407,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -66,6 +66,30 @@
             "deviceId": "c1822173191dea68",
             "name": "com.DefaultCompany.UnverpacktdurchBerlin",
             "processId": 27975,
+            "exited": false
+        },
+        {
+            "deviceId": "c1822173191dea68",
+            "name": "com.DefaultCompany.UnverpacktdurchBerlin",
+            "processId": 14865,
+            "exited": false
+        },
+        {
+            "deviceId": "c1822173191dea68",
+            "name": "com.DefaultCompany.UnverpacktdurchBerlin",
+            "processId": 15693,
+            "exited": false
+        },
+        {
+            "deviceId": "c1822173191dea68",
+            "name": "com.DefaultCompany.UnverpacktdurchBerlin",
+            "processId": 16028,
+            "exited": false
+        },
+        {
+            "deviceId": "c1822173191dea68",
+            "name": "com.DefaultCompany.UnverpacktdurchBerlin",
+            "processId": 16407,
             "exited": false
         }
     ],

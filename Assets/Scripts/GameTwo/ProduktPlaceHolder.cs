@@ -31,7 +31,6 @@ public class ProduktPlaceHolder : MonoBehaviour
             UIManager.Main.SetBlurry(true);
             int i = Random.Range(0, products.Count);
             actualProduct = products[i];
-            Debug.Log(actualProduct);
             GetComponent<SpriteRenderer>().sprite = products[i].Sprite;
             GameManager.Main.actualProductName = actualProduct.ProduktType.ToString();
             _products.Remove(actualProduct);
@@ -59,8 +58,6 @@ public class ProduktPlaceHolder : MonoBehaviour
 
         UIManager.Main.nameButton3.text = tempList[0];
 
-        //UIManager.Main.nameButton1.text = actualProduct.answer1;
-        //UIManager.Main.nameButton2.text = actualProduct.answer2;
-        //UIManager.Main.nameButton3.text = actualProduct.answer3;
+        
     }
 }

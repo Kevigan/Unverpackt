@@ -50,6 +50,7 @@ public class PlayerCharacter2D : MonoBehaviour
         rigid = GetComponent<Rigidbody2D>();
         collisionDetection = GetComponent<CollisionDetection>();
         UIManager.Main.UpdateSpeedMultiplier(speedMultiplier);
+        SoundManager.Main.ChangeBackGroundMusic(BackgroundMusic.backgroundJumpAndRUn);
     }
 
     // Update is called once per frame
@@ -212,6 +213,7 @@ public class PlayerCharacter2D : MonoBehaviour
         if (_jumpAmount >= JumpAmount)
         {
             SetYForce(jumpForce);
+            SoundManager.Main.ChooseSound(SoundType.PlayerJump);
             _jumpAmount--;
         }
     }

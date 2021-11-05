@@ -23,6 +23,7 @@ public class Collectable : MonoBehaviour
         {
             GameManager.Main.FruitAdder(fruitType);
             GameManager.Main.UpdateScoreFruits(points);
+            SoundManager.Main.ChooseSound(SoundType.PlayerCollect);
             GameObject floatText = Instantiate(floatingTextPrefab, player.transform.position, Quaternion.identity);
             floatText.GetComponentInChildren<TextMeshPro>().text = fruitType.ToString();
             floatText.GetComponentInChildren<TextMeshPro>().outlineColor = color;

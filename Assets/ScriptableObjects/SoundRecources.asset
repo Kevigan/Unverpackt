@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 218b5e3369002bc448f9ba2511755c12, type: 3}
+  m_Name: SoundRecources
+  m_EditorClassIdentifier: 
+  playerJump: {fileID: 8300000, guid: 516c68120fdb8f04cafb6ca7f3b53e1c, type: 3}
+  playerDie: {fileID: 8300000, guid: 69a458f045892a549bbc6dea3120cfbf, type: 3}
+  playerCollect: {fileID: 8300000, guid: 04608e661dee36e419e2eb3d6dd4bb79, type: 3}
+  cheer: {fileID: 8300000, guid: c072ddf1916892942894714cdf207d48, type: 3}
+  oohh: {fileID: 8300000, guid: 09406575510c06349bf310090c08bb69, type: 3}

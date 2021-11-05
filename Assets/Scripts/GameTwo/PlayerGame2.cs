@@ -11,6 +11,7 @@ public class PlayerGame2 : MonoBehaviour
     void Start()
     {
         collisionDetection = GetComponent<CollisionDetection>();
+        SoundManager.Main.ChangeBackGroundMusic(BackgroundMusic.backgroundBilderRaten);
     }
 
     // Update is called once per frame
