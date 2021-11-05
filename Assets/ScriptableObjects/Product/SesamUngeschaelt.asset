@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: fcbb622eacfbbcf45881a0e86e85775b, type: 3}
   produktType: 29
-  answer1: SesameGeschaelt
+  answer1: Sesame_Geschaelt
   answer2: Couscous
-  answer3: SesamUngeschaelt
+  answer3: Sesam_Ungeschaelt

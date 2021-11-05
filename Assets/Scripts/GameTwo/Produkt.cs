@@ -46,8 +46,8 @@ public enum ProduktType
     PfefferSchwarz,
     Quinoa,
     RoteLinsen,
-    SesamUngeschaelt,
-    SesameGeschaelt,
+    Sesam_Ungeschaelt,
+    Sesame_Geschaelt,
     Sonnenblumenkerne,
     Walnusshaelften
 }
