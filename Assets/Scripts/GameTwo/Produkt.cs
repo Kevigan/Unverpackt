@@ -17,7 +17,7 @@ public class Produkt : ScriptableObject
 }
 public enum ProduktType
 {
-    GemüseBrühe,
+    GemueseBruehe,
     MangoScheiben,
     MadrasCurry,
     Berglinsen,

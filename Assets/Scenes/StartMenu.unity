@@ -367,9 +367,45 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1370502248, guid: f9d02984e8aa2764d9d5e7f515b911bf, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -80.615
+      objectReference: {fileID: 0}
+    - target: {fileID: 1370502248, guid: f9d02984e8aa2764d9d5e7f515b911bf, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 14.8874
+      objectReference: {fileID: 0}
+    - target: {fileID: 1370502248, guid: f9d02984e8aa2764d9d5e7f515b911bf, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -40.307
+      objectReference: {fileID: 0}
+    - target: {fileID: 1370502248, guid: f9d02984e8aa2764d9d5e7f515b911bf, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -19.9701
+      objectReference: {fileID: 0}
+    - target: {fileID: 1498177403, guid: f9d02984e8aa2764d9d5e7f515b911bf, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -88
+      objectReference: {fileID: 0}
     - target: {fileID: 374664339296774840, guid: f9d02984e8aa2764d9d5e7f515b911bf, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2344145488840504850, guid: f9d02984e8aa2764d9d5e7f515b911bf, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -114
+      objectReference: {fileID: 0}
+    - target: {fileID: 2344145488840504850, guid: f9d02984e8aa2764d9d5e7f515b911bf, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 123
+      objectReference: {fileID: 0}
+    - target: {fileID: 4999295931849435934, guid: f9d02984e8aa2764d9d5e7f515b911bf, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -347
+      objectReference: {fileID: 0}
+    - target: {fileID: 4999295931849435934, guid: f9d02984e8aa2764d9d5e7f515b911bf, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -106
       objectReference: {fileID: 0}
     - target: {fileID: 7426838829296193722, guid: f9d02984e8aa2764d9d5e7f515b911bf, type: 3}
       propertyPath: m_Text
