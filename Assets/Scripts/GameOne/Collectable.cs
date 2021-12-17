@@ -28,6 +28,7 @@ public class Collectable : MonoBehaviour
             floatText.GetComponentInChildren<TextMeshPro>().text = fruitType.ToString();
             floatText.GetComponentInChildren<TextMeshPro>().outlineColor = color;
             floatText.transform.position = new Vector3(player.transform.position.x, floatText.transform.position.y);
+            Destroy(floatText, 1);
             
             Destroy(gameObject);
         }

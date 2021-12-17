@@ -35,6 +35,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject GameTwoPreWindow;
     [SerializeField] private Text score;
     public Text highScoreGame2;
+    public Text fehlVersuch;
 
     public Text nameButton1;
     public Text nameButton2;
@@ -60,6 +61,7 @@ public class UIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        UpdateScoreGame2();
         highScoreTextMenu.text = PlayerPrefs.GetInt("HighScore").ToString();
         highScoreGame2.text = PlayerPrefs.GetInt("HighScoreGame2").ToString();
     }
@@ -215,12 +217,15 @@ public class UIManager : MonoBehaviour
 
     public void ActivateWrongAnswerPanel()
     {
-        GameManager.Main.Life--;
-        ChangeUIStateGame2(UIStateGame2.WrongAnswerPanel);
-        SoundManager.Main.ChooseSound(SoundType.oohh);
-        SetBlurry(false);
-        GameManager.Main.Score -= 50;
-        StartCoroutine(NextProduct());
+            GameManager.Main.Life--;
+            ChangeUIStateGame2(UIStateGame2.WrongAnswerPanel);
+            SoundManager.Main.ChooseSound(SoundType.oohh);
+            SetBlurry(false);
+            GameManager.Main.Score -= 50;
+        if (GameManager.Main.Life > 0)
+        {
+            StartCoroutine(NextProduct());
+        }
 
     }
 
@@ -237,6 +242,7 @@ public class UIManager : MonoBehaviour
     public void UpdateScoreGame2()
     {
         score.text = "Punkte:  " + GameManager.Main.Score.ToString();
+        fehlVersuch.text = "Fehlversuche:  " + GameManager.Main.Life.ToString();
     }
 
     public void Button1()
@@ -275,7 +281,7 @@ public class UIManager : MonoBehaviour
         }
     }
 
-   
+
     #endregion
 }
 

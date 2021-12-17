@@ -38,6 +38,14 @@ public class PlayerCharacter2D : MonoBehaviour
 
     private bool _dead = false;
     public bool Dead { get => _dead; set { _dead = value; } }
+
+    [Header("Invincible")]
+    [SerializeField] private bool isInvincible = false;
+    public bool IsInvincible { get => isInvincible; set { isInvincible = value; } }
+    private float invincibleTimer = 5f;
+    private float _invincibleTimer = 5f;
+    private bool playInvincibleEffect = false;
+    [SerializeField] private ParticleSystem particle;
     // Start is called before the first frame update
     void Start()
     {
@@ -63,6 +71,21 @@ public class PlayerCharacter2D : MonoBehaviour
             collisionDetection.HandleCollision();
             PlayAnimations();
             CalculateSpeedMultiplier();
+        }
+        if (IsInvincible)
+        {
+            if (playInvincibleEffect)
+            {
+                particle.Play();
+                playInvincibleEffect = false;
+            }
+            invincibleTimer -= Time.deltaTime;
+            if(invincibleTimer <= 0)
+            {
+                invincibleTimer = _invincibleTimer;
+                IsInvincible = false;
+                particle.Stop();
+            }
         }
     }
 
@@ -102,6 +125,12 @@ public class PlayerCharacter2D : MonoBehaviour
             speedMultiplier += 0.5f;
             UIManager.Main.UpdateSpeedMultiplier(speedMultiplier);
         }
+    }
+
+    public void StartInvincible()
+    {
+        IsInvincible = true;
+        playInvincibleEffect = true;
     }
 
     public void PlayDeathAnimation()

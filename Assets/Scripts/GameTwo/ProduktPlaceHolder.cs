@@ -57,7 +57,5 @@ public class ProduktPlaceHolder : MonoBehaviour
         tempList.RemoveAt(j);
 
         UIManager.Main.nameButton3.text = tempList[0];
-
-        
     }
 }

@@ -30,7 +30,20 @@ public class GameManager : MonoBehaviour
     [Header("GameTwo")]
     public string actualProductName;
     private int life = 5;
-    public int Life { get => life; set { life = value; } }
+    public int Life
+    {
+        get => life;
+        set
+        {
+            life = value;
+            if (life <= 0)
+            {
+
+                StartCoroutine(TimerOne());
+
+            }
+        }
+    }
     private int _score;
     public int Score
     {
@@ -39,11 +52,7 @@ public class GameManager : MonoBehaviour
         {
             _score = value;
             UIManager.Main.UpdateScoreGame2();
-            if(life <= 0)
-            {
-                StartCoroutine(TimerOne());
-                
-            }
+            
         }
     }
     public int SavedScoreGame2;
@@ -65,8 +74,6 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        UIManager.Main.UpdateScoreGame2();
-
         if (SceneManager.GetSceneByName("StartMenu").isLoaded)
         {
             ChangeGameState(GameState.StartMenu);
@@ -79,7 +86,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        Debug.Log(gameStateGame2);
     }
 
     public void ChangeGameState(GameState newGameState)
@@ -120,6 +127,7 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(i);
         actualScene = i;
         ChangeGameState(GameState.playing);
+        UIManager.Main.UpdateScoreGame2();
     }
 
     public void FruitAdder(FruitType fruit)
@@ -174,6 +182,7 @@ public class GameManager : MonoBehaviour
 
     public void ResetValues()
     {
+        //Game 1
         HighScore = 0;
         apples = 0;
         bananas = 0;
@@ -181,6 +190,9 @@ public class GameManager : MonoBehaviour
         kiwis = 0;
         melons = 0;
         pineapple = 0;
+        //Game 2
+        life = 5;
+        Score = 0;
     }
 
     public void SaveHighScore()
@@ -207,14 +219,18 @@ public class GameManager : MonoBehaviour
             case GameStateGame2.playing:
                 break;
             case GameStateGame2.gameOver:
+                Debug.Log("gameover");
+                UIManager.Main.ChangeUIStateGame2(UIStateGame2.NoProductLeftPanel);
                 break;
         }
     }
     IEnumerator TimerOne()
     {
         yield return new WaitForSeconds(2);
-        gameStateGame2 = GameStateGame2.gameOver;
-        UIManager.Main.ChangeUIStateGame2(UIStateGame2.NoProductLeftPanel);
+
+        ChangeGameStateGame2(GameStateGame2.gameOver);
+        //gameStateGame2 = GameStateGame2.gameOver;
+        
     }
 }
 
@@ -229,6 +245,6 @@ public enum GameState
 
 public enum GameStateGame2
 {
-    playing, 
+    playing,
     gameOver
 }

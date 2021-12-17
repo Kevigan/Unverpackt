@@ -117,8 +117,6 @@ MonoBehaviour:
   - {fileID: 6450399861069907400, guid: b591c48d83327c74eba4306d4734a357, type: 3}
   prefabObstacles:
   - {fileID: 8214424628678239541, guid: 3ee39e0028c8d5a4ca886b51ebeac8bc, type: 3}
-  - {fileID: 3877621156542781176, guid: 721c5dae95d6a644abf90566413b7f1e, type: 3}
-  - {fileID: 1433061472330616891, guid: 0edc0da6538ca084ebb4e135fed2ccf4, type: 3}
   spawnSpotCollectable:
   - {fileID: 0}
   - {fileID: 0}

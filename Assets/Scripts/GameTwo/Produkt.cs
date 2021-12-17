@@ -49,5 +49,19 @@ public enum ProduktType
     Sesam_Ungeschaelt,
     Sesame_Geschaelt,
     Sonnenblumenkerne,
-    Walnusshaelften
+    Walnusshaelften,
+    Akazienhonig,
+    Belugalinsen,
+    HonigFruehjahrsbluete,
+    Kuemmel,
+    NaturreisMittelKorn,
+    Parboiledreis,
+    Rauchsalz,
+    Sauerkirschen, 
+    Schwarzkuemmel,
+    SeitanHack,
+    SeitanTamaris,
+    SommerblueteHonig,
+    Trinkschokolade, 
+    Zimt
 }

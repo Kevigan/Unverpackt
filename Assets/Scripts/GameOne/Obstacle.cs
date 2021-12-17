@@ -6,17 +6,6 @@ public class Obstacle : MonoBehaviour
 {
     [SerializeField] private float jumpForce = 5f;
     [SerializeField] private ObstacleType obstacleType;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -24,6 +13,7 @@ public class Obstacle : MonoBehaviour
         {
             player.SetYForce(jumpForce);
         }
+        
     }
 }
 

@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 664eaae4395109448aed246b1f328643, type: 3}
+  m_Name: Zimt
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 21300000, guid: 833f53735845e424d8b430f88b026528, type: 3}
+  produktType: 46
+  answer1: Kurkuma
+  answer2: Chillipulver
+  answer3: Zimt

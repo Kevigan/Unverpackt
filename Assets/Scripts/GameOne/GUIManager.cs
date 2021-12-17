@@ -24,7 +24,6 @@ public class GUIManager : MonoBehaviour
 
     public void PlayFloatigTextCoins(Vector3 pos)
     {
-
         Instantiate(floatingScoreText, pos + new Vector3(0, 1, -.25f), Quaternion.identity);
     }
 }

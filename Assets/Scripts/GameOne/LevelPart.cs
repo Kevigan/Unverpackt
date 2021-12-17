@@ -9,6 +9,8 @@ public class LevelPart : MonoBehaviour
     [SerializeField] private GameObject[] prefabObstacles;
     [SerializeField] private Transform[] spawnSpotCollectable;
     [SerializeField] private Transform[] spawnSpotObstacle;
+    [SerializeField] private GameObject invincibleObject;
+    [SerializeField] private Transform invincibleObjectSpawnPoint;
     [SerializeField] private bool LevelPartZero;
     [SerializeField] private bool LevelPartNoObsctacle;
 
@@ -37,6 +39,7 @@ public class LevelPart : MonoBehaviour
     private void PickRandomObstacles()
     {
         int i = Random.Range(0, 11);
+        int i4 = Random.Range(0, 100);
         if (i > 6)
         {
             int i2 = Random.Range(0, prefabObstacles.Length);
@@ -44,7 +47,14 @@ public class LevelPart : MonoBehaviour
             var newObstacle = Instantiate(prefabObstacles[i2], spawnSpotObstacle[i3].position, Quaternion.identity);
             newObstacle.transform.parent = gameObject.transform;
         }
+        if(i4 <= 5)
+        {
+            var newInvinvibleObject = Instantiate(invincibleObject, invincibleObjectSpawnPoint.position, Quaternion.identity);
+            newInvinvibleObject.transform.parent = gameObject.transform;
+        }
     }
+
+    
 
     IEnumerator startCountdown()
     {

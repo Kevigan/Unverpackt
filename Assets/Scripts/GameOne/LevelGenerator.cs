@@ -38,18 +38,18 @@ public class LevelGenerator : MonoBehaviour
 
     private Transform SpawnLevelPart(Vector3 spawnPosition)
     {
-        int i = Random.Range(0, 11);
-        if (i > 2)
-        {
-            Transform levelPartTransform = Instantiate(levelParts[0], spawnPosition, Quaternion.identity);
-            return levelPartTransform;
-        }
-        else
-        {
-            int num = Random.Range(1, levelParts.Length);
-            Transform levelPartTransform = Instantiate(levelParts[num], spawnPosition, Quaternion.identity);
-            return levelPartTransform;
-        }
+        Transform levelPartTransform = Instantiate(levelParts[0], spawnPosition, Quaternion.identity);
+        return levelPartTransform;
+        //int i = Random.Range(0, 11);
+        //if (i > 2)
+        //{
+        //}
+        //else
+        //{
+        //    int num = Random.Range(1, levelParts.Length);
+        //    Transform levelPartTransform = Instantiate(levelParts[num], spawnPosition, Quaternion.identity);
+        //    return levelPartTransform;
+        //}
     }
 }
 
