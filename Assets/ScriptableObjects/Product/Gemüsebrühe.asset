@@ -14,7 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: 82bbe5069c3ea6b4faf8b5dee647527a, type: 3}
   produktType: 0
-  answerIndex: 0
   answer1: "Kr\xE4uterDeProvince"
   answer2: Majoran
-  answer3: "Gem\xFCseBr\xFChe"
+  answer3: GemueseBruehe
