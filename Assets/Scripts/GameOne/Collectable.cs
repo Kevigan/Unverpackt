@@ -42,5 +42,4 @@ public enum FruitType
     Linsen,
     Goji,
     Reis,
-    Pineapple
 }

@@ -134,30 +134,27 @@ public class GameManager : MonoBehaviour
     {
         switch (fruit)
         {
-            case FruitType.Banana:
+            case FruitType.Kaffee:
                 bananas++;
                 UpdateFruitUI();
                 break;
-            case FruitType.Apple:
+            case FruitType.Hirse:
                 apples++;
                 UpdateFruitUI();
                 break;
-            case FruitType.Cherries:
+            case FruitType.Linsen:
                 cherries++;
                 UpdateFruitUI();
                 break;
-            case FruitType.Kiwi:
+            case FruitType.Goji:
                 kiwis++;
                 UpdateFruitUI();
                 break;
-            case FruitType.Melon:
+            case FruitType.Reis:
                 melons++;
                 UpdateFruitUI();
                 break;
-            case FruitType.Pineapple:
-                pineapple++;
-                UpdateFruitUI();
-                break;
+            
         }
     }
     public void UpdateFruitUI()
