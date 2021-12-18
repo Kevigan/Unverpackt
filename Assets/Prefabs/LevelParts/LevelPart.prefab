@@ -235,7 +235,6 @@ MonoBehaviour:
   - {fileID: 1404117345578038631, guid: 0e6e200abfab97048a216f87a7bedb75, type: 3}
   - {fileID: 1042795981485243435, guid: aea31e4996ef0d24e86a84dcf2e9e401, type: 3}
   - {fileID: 1055777799367546542, guid: 04ffc9382dd37d24ba4a860cf83c75a9, type: 3}
-  - {fileID: 6450399861069907400, guid: b591c48d83327c74eba4306d4734a357, type: 3}
   prefabObstacles:
   - {fileID: 8214424628678239541, guid: 3ee39e0028c8d5a4ca886b51ebeac8bc, type: 3}
   - {fileID: 3877621156542781176, guid: 721c5dae95d6a644abf90566413b7f1e, type: 3}

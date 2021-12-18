@@ -37,10 +37,10 @@ public class Collectable : MonoBehaviour
 
 public enum FruitType
 {
-    Banana,
-    Apple,
-    Cherries,
-    Kiwi,
-    Melon,
+    Kaffee,
+    Hirse,
+    Linsen,
+    Goji,
+    Reis,
     Pineapple
 }
