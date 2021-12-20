@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1042795981485243434}
   - component: {fileID: -291706720987574570}
   m_Layer: 0
-  m_Name: Kiwi_0
+  m_Name: Hirse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -103,7 +103,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.57, y: 0.81}
+    oldSize: {x: 0.76, y: 1.08}
     newSize: {x: 0.32, y: 0.32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -124,8 +124,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 831a485d0cd159a4981d648f13f64592, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fruitType: 3
-  color: {r: 0.07754635, g: 0.6226415, b: 0, a: 1}
+  fruitType: 1
+  color: {r: 1, g: 0.81568635, b: 0.37647063, a: 1}
   points: 50
   floatingTextPrefab: {fileID: 2534513156976123230, guid: b45f15801bafd8b40a6f65157c86c85a, type: 3}
 --- !u!114 &-291706720987574570
