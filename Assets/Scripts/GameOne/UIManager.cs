@@ -74,7 +74,7 @@ public class UIManager : MonoBehaviour
     #region Game1
     public void UpdateSpeedMultiplier(float value)
     {
-        speedMultiplierText.text = "Speed:  " + value.ToString();
+        speedMultiplierText.text = "Tempo:  " + value.ToString();
     }
 
     public void ChangeUIState(UIState newState)

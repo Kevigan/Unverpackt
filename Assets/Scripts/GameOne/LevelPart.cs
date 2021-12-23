@@ -9,6 +9,8 @@ public class LevelPart : MonoBehaviour
     [SerializeField] private GameObject[] prefabObstacles;
     [SerializeField] private Transform[] spawnSpotCollectable;
     [SerializeField] private Transform[] spawnSpotObstacle;
+    [SerializeField] private GameObject[] lanternPrefabs;
+    [SerializeField] private Transform lanternPos;
     [SerializeField] private GameObject invincibleObject;
     [SerializeField] private Transform invincibleObjectSpawnPoint;
     [SerializeField] private bool LevelPartZero;
@@ -19,7 +21,7 @@ public class LevelPart : MonoBehaviour
         if (LevelPartZero)
         {
             PickRandomCollectable();
-
+            SpawnLantern();
             if (!LevelPartNoObsctacle) PickRandomObstacles();
         }
     }
@@ -36,6 +38,17 @@ public class LevelPart : MonoBehaviour
         }
     }
 
+    private void SpawnLantern()
+    {
+        int i = Random.Range(0, 10);
+        int i2 = Random.Range(0, 2);
+        if (i < 5)
+        {
+            var newObstacle = Instantiate(lanternPrefabs[i2], lanternPos.position, Quaternion.identity);
+            newObstacle.transform.parent = gameObject.transform;
+        }
+    }
+
     private void PickRandomObstacles()
     {
         int i = Random.Range(0, 11);
@@ -47,14 +60,14 @@ public class LevelPart : MonoBehaviour
             var newObstacle = Instantiate(prefabObstacles[i2], spawnSpotObstacle[i3].position, Quaternion.identity);
             newObstacle.transform.parent = gameObject.transform;
         }
-        if(i4 < 3)
+        if (i4 < 3)
         {
             var newInvinvibleObject = Instantiate(invincibleObject, invincibleObjectSpawnPoint.position, Quaternion.identity);
             newInvinvibleObject.transform.parent = gameObject.transform;
         }
     }
 
-    
+
 
     IEnumerator startCountdown()
     {

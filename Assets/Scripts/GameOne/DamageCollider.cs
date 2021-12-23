@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DamageCollider : MonoBehaviour
 {
-    private Animator animator;
+    [SerializeField] GameObject explosionPrefab;
     void Start()
     {
         //animator = GetComponent<Animator>();
@@ -26,6 +26,7 @@ public class DamageCollider : MonoBehaviour
             }
             else
             {
+                Instantiate(explosionPrefab, player.transform.position, Quaternion.identity);
                 Destroy(transform.parent.gameObject);
             }
         }

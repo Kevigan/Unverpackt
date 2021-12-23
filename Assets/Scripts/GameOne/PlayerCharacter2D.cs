@@ -42,8 +42,8 @@ public class PlayerCharacter2D : MonoBehaviour
     [Header("Invincible")]
     [SerializeField] private bool isInvincible = false;
     public bool IsInvincible { get => isInvincible; set { isInvincible = value; } }
-    private float invincibleTimer = 5;
-    private float _invincibleTimer = 5;
+    private float invincibleTimer = 10;
+    private float _invincibleTimer = 10;
     private bool playInvincibleEffect = false;
     [SerializeField] private ParticleSystem particle;
     // Start is called before the first frame update

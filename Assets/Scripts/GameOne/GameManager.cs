@@ -168,7 +168,7 @@ public class GameManager : MonoBehaviour
 
     public void UpdateScoreDistance()
     {
-        UIManager.Main.scoreText.text = "Score:  " + highScore.ToString();
+        UIManager.Main.scoreText.text = "Punkte:  " + highScore.ToString();
     }
     public void UpdateScoreFruits(int points)
     {
